@@ -15,7 +15,7 @@ export class DetailComponent {
   marks?: Number[];
 
   myForm = new FormGroup({
-    mark: new FormControl('', Validators.),
+    mark: new FormControl('', [Validators.min(0), Validators.max(10)]),
   });
 
   route = inject(ActivatedRoute);
@@ -53,10 +53,17 @@ export class DetailComponent {
     console.log(this.marks);
     const newMark = this.myForm.value.mark;
     console.log(newMark);
-    if(this.marks){
+    if(this.marks && this.myForm.valid){
       this.marks.push(Number(newMark));
       console.log(this.marks);
       this.addMarksToStudent(this.marks); //addMarksToStudent oppure addMarksToStudentObservable
+    } else{
+      for (const key in this.myForm.controls) {
+        if (Object.prototype.hasOwnProperty.call(this.myForm.controls, key)) {
+          const element = this.myForm.get(key);
+          console.log(key, element?.errors)
+        }
+      }
     }
     this.myForm.reset();
   }

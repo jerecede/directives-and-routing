@@ -14,20 +14,18 @@
             <span><strong>gender: </strong> {{student.gender}}</span>
             <span><strong>country: </strong> {{student.country}}</span>
         </div>
+        <div>
+            <span><strong>marks: </strong></span>
+            @for (mark of student.marks; track $index) {
+            <span>{{mark}} </span>
+            }
+        </div>
     </div>
-    <div>
-        <span><strong>marks: </strong></span>
-        @for (mark of student.marks; track $index) {
-        <span>{{mark}} </span>
-        }
-    </div>
-    <br>
     <form [formGroup]="myForm" (ngSubmit)="addMark()">
         <label for="mark">add mark: </label>
         <input type="number" formControlName="mark" id="mark">
         <button type="submit">add</button>
     </form>
-    <br>
     <button (click)="openDialog()">delete</button>
 </div>
 }
