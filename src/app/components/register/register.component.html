@@ -1,13 +1,12 @@
-<button (click)="fakeLogin()">login NOW</button>
-
-<form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+<form [formGroup]="registerForm" (ngSubmit)="submitForm()">
     <label for="email">email: </label>
     <input type="email" formControlName="email" id="email">
 
     <label for="password">password: </label>
     <input type="text" formControlName="password" id="password">
 
-    <button>enter</button>
+    <label for="password">confirm password: </label>
+    <input type="text" formControlName="password" id="password">
 
-    <a *ngIf="!authServ.isAuth" [routerLink]="['/register']">register?</a>
+    <button>enter</button>
 </form>

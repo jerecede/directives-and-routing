@@ -5,6 +5,7 @@ import { RandomizerComponent } from './components/randomizer/randomizer.componen
 import { NewStudentComponent } from './components/new-student/new-student.component';
 import { authGuard } from './guards/auth/auth.guard';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -12,6 +13,7 @@ export const routes: Routes = [
     {path: 'randomizer', component: RandomizerComponent},
     {path: 'newStudent', component: NewStudentComponent, canActivate:[authGuard]},
     {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'}, //quando hai un path ed essere sicuro che TUTTO sia ''
     {path: '**', loadComponent: () => import("./components/not-found/not-found.component") //import dinamico
                                             .then(ts => ts.NotFoundComponent)}                            

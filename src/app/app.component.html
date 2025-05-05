@@ -10,6 +10,7 @@
       <a *ngIf="authServ.isAuth" [routerLink]="['newStudent']">Add Student</a>
       <a *ngIf="!authServ.isAuth" [routerLink]="['login']">Login</a>
       <a *ngIf="authServ.isAuth" (click)="logout()">logout</a>
+      <a *ngIf="!authServ.isAuth" [routerLink]="['register']">Register</a>
     </nav>
   </header>
   <main>
