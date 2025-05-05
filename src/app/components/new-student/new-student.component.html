@@ -1,22 +1,45 @@
-<form [formGroup]="newStudentForm" (ngSubmit)="addStudent()">
+<div class="container">
 
-    <label for="name">name: </label>
-    <input type="text" formControlName="name" id="name">
+    <dialog>
+        <div class="dialog">
+            <div class="info-container">
+                <img [src]="imgUrl">
+                <h2>{{name}} {{surname}}</h2>
+                <span><strong>birthdate: </strong> {{dob.split('T')[0]}}</span>
+                <span><strong>gender: </strong> {{gender}}</span>
+                <span><strong>country: </strong> {{country}}</span>
+            </div>
+            <div class="buttons-dialog">
+                <button (click)="addStudent()">yes</button>
+                <button (click)="closeDialog()">no</button>
+            </div>
+        </div>
+    </dialog>
 
-    <label for="surname">surname: </label>
-    <input type="text" formControlName="surname" id="surname">
+    <form [formGroup]="newStudentForm" (ngSubmit)="submitForm()">
 
-    <label for="dob">birthdate: </label>
-    <input type="date" formControlName="dob" id="dob">
-
-    <label for="gender">gender: </label>
-    <input type="text" formControlName="gender" id="gender">
-
-    <label for="country">country: </label>
-    <input type="dropdown" formControlName="country" id="country">
-
-    <label for="imgUrl">imgUrl: </label>
-    <input type="text" formControlName="imgUrl" id="imgUrl">
-
-    <button type="submit">add</button>
-</form>
+        <label for="name">name: </label>
+        <input type="text" formControlName="name" id="name">
+    
+        <label for="surname">surname: </label>
+        <input type="text" formControlName="surname" id="surname">
+    
+        <label for="dob">birthdate: </label>
+        <input type="date" formControlName="dob" id="dob" [max]="maxDate">
+    
+        <label for="gender">gender: </label>
+        <input type="text" formControlName="gender" id="gender">
+    
+        <label for="country">country: </label>
+        <select formControlName="country" id="country">
+            <option *ngFor="let country of countryList" [value]="country.name">
+                {{country.code}}
+            </option>
+        </select>
+    
+        <label for="imgUrl">imgUrl: </label>
+        <input type="text" formControlName="imgUrl" id="imgUrl">
+    
+        <button type="submit">add</button>
+    </form>
+</div>

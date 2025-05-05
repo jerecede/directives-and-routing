@@ -1,7 +1,7 @@
 -ordinare home, mettere css alla home, card
 -fare dettaglio carino
--attivare randomizer (default a coppie, poter anche definire gruppi(se da 5 o 3))
--sorting
+-attivare randomizer (default a coppie, poter anche definire gruppi(se da 5 o 3))!!!!!!!!!!!
+-sorting!!!!!!!!!!!!!!!!!
 
 -form new student vincoli,
 name, surname, required
@@ -11,6 +11,10 @@ gender, required
 imageurl
 marks, vuoto
 id, automatico
-dopo submit display errori, segnarecaselle sbagliate con rosso
+
+dopo submit display errori, segnarecaselle sbagliate con rosso!!!!!!!!!!!!
+gestire quando url img src non esiste!!!!!!!!!!!!!
+date che creo dal form deve avere il formato strano!!!!!!!
+css!!!!!!!!!!!!!
 
 dopo submit con successo, fare post e dare preview dello studente, aspettare conferma (se non li piace fa delete), oppure fare preview e dopo la conferma fare la post

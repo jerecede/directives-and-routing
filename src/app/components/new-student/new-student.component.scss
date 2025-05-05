@@ -1,0 +1,32 @@
+.container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.container form * {
+    width: 200px;
+}
+
+.dialog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-container img{
+    width: 200px;
+}
+
+.buttons-dialog{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

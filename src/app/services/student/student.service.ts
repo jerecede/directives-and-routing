@@ -68,15 +68,15 @@ export class StudentService {
     return this.http.put<Student>(url, patchValue, { headers });
   }
 
-  addStudent(){
+  addStudent(formName: string, formSurname: string, formCountry: string, formDob: string, formGender: string, formImageurl: string){
     const testStudent: Student = {
-      name: 'pippo',
-      surname: 'de pippos',
-      country: 'topolinia',
-      dob: '05-07-2003',
-      gender: 'fluid',
+      name: formName,
+      surname: formSurname,
+      country: formCountry,
+      dob: formDob,
+      gender: formGender,
       marks: [],
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/it/5/50/Mario_Nintendo.png',
+      imageUrl: formImageurl,
       id: '',
     }
 
@@ -90,8 +90,10 @@ export class StudentService {
       } else{
         throw new Error("Errore durante l'eliminazione dello studente");
       }
-    }).then(newStudent => {
-      console.log(newStudent);
+    }).then(() => {
+      setTimeout(() => {
+        this.router.navigate(['/home']);
+      }, 1000);
     }).catch(error => {
       console.error(error);
     })

@@ -37,7 +37,7 @@ export class DetailComponent {
   }
 
   removeStudent(id: string) {
-    this.closeDialog;
+    this.closeDialog();
     this.studentServ.deleteStudent(id);
   }
 

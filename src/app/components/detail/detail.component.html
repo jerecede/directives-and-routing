@@ -1,25 +1,33 @@
 @if(student){
+<div class="container">
     <div>
-        <button (click)="openDialog()">delete</button>
-
         <dialog>
             <span>sicuro???</span><br>
             <button (click)="removeStudent(student.id)">yes</button>
             <button (click)="closeDialog()">no</button>
         </dialog>
 
-        <img [src]="student.imageUrl">
-        <h2>{{student.name}}</h2>
+        <div class="info-container">
+            <img [src]="student.imageUrl">
+            <h2>{{student.name}} {{student.surname}}</h2>
+            <span><strong>birthdate: </strong> {{student.dob.split('T')[0]}}</span>
+            <span><strong>gender: </strong> {{student.gender}}</span>
+            <span><strong>country: </strong> {{student.country}}</span>
+        </div>
     </div>
     <div>
         <span><strong>marks: </strong></span>
         @for (mark of student.marks; track $index) {
-            <span>{{mark}} </span>
+        <span>{{mark}} </span>
         }
     </div>
+    <br>
     <form [formGroup]="myForm" (ngSubmit)="addMark()">
         <label for="mark">add mark: </label>
         <input type="number" formControlName="mark" id="mark">
         <button type="submit">add</button>
     </form>
+    <br>
+    <button (click)="openDialog()">delete</button>
+</div>
 }
