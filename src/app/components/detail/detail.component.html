@@ -13,12 +13,12 @@
             <span><strong>birthdate: </strong> {{student.dob.split('T')[0]}}</span>
             <span><strong>gender: </strong> {{student.gender}}</span>
             <span><strong>country: </strong> {{student.country}}</span>
-        </div>
-        <div>
-            <span><strong>marks: </strong></span>
-            @for (mark of student.marks; track $index) {
-            <span>{{mark}} </span>
-            }
+            
+            <span><strong>marks: </strong>
+                @for (mark of student.marks; track $index) {
+                    {{mark}}
+                }
+            </span>
         </div>
     </div>
     <form [formGroup]="myForm" (ngSubmit)="addMark()">
