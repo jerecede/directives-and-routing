@@ -1,17 +1,19 @@
 <!-- <button appSuperBtn="crimson" font-color="white">schiacciami forte!!!</button>
 <button appSuperBtn="gold">schiacciami piano!!!</button>
 <div appSuperBtn>sono un div!!!</div> -->
-<header>
-  <h1>Student Manager</h1>
-  <nav>
-    <a routerLink="/">Home</a>
-    <a [routerLink]="['randomizer']">Randomizer</a>
-    <a [routerLink]="['newStudent']">Add Student</a>
-  </nav>
-</header>
-<main>
-  <router-outlet />
-</main>
-<footer>
-  copyright©
-</footer>
+<div class="container">
+  <header>
+    <h1>Student Manager</h1>
+    <nav>
+      <a routerLink="/">Home</a>
+      <a [routerLink]="['randomizer']">Randomizer</a>
+      <a [routerLink]="['newStudent']">Add Student</a>
+    </nav>
+  </header>
+  <main>
+    <router-outlet />
+  </main>
+  <footer>
+    copyright©
+  </footer>
+</div>

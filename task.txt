@@ -15,6 +15,7 @@ id, automatico
 dopo submit display errori, segnarecaselle sbagliate con rosso!!!!!!!!!!!!
 gestire quando url img src non esiste!!!!!!!!!!!!!
 date che creo dal form deve avere il formato strano!!!!!!!
+nel form il bottone invia si attiva solo quando fai tutte le required!!!!
 css!!!!!!!!!!!!!
 
 dopo submit con successo, fare post e dare preview dello studente, aspettare conferma (se non li piace fa delete), oppure fare preview e dopo la conferma fare la post
