@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StudentService } from '../../services/student/student.service';
 import { Student } from '../../model/student';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-detail',
@@ -15,7 +15,7 @@ export class DetailComponent {
   marks?: Number[];
 
   myForm = new FormGroup({
-    mark: new FormControl(''),
+    mark: new FormControl('', Validators.),
   });
 
   route = inject(ActivatedRoute);

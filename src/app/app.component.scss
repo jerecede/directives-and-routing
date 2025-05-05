@@ -1,0 +1,20 @@
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+footer{
+    height: 100px;
+}
+
+main{
+    height: calc(100vh - 200px);
+}
