@@ -33,7 +33,7 @@
         <label for="country">country: </label>
         <select formControlName="country" id="country">
             <option *ngFor="let country of countryList" [value]="country.name">
-                {{country.code}}
+                {{country.name}}
             </option>
         </select>
     
