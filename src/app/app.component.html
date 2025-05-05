@@ -5,9 +5,11 @@
   <header>
     <h1>Student Manager</h1>
     <nav>
-      <a routerLink="/">Home</a>
+      <a routerLink="/home">Home</a>
       <a [routerLink]="['randomizer']">Randomizer</a>
-      <a [routerLink]="['newStudent']">Add Student</a>
+      <a *ngIf="authServ.isAuth" [routerLink]="['newStudent']">Add Student</a>
+      <a *ngIf="!authServ.isAuth" [routerLink]="['login']">Login</a>
+      <a *ngIf="authServ.isAuth" (click)="logout()">logout</a>
     </nav>
   </header>
   <main>

@@ -1,0 +1,11 @@
+<button (click)="fakeLogin()">login NOW</button>
+
+<form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <label for="email">email: </label>
+    <input type="email" formControlName="email" id="email">
+
+    <label for="password">password: </label>
+    <input type="password" formControlName="password" id="password">
+
+    <button>enter</button>
+</form>

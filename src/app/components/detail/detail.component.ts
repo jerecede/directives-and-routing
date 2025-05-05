@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StudentService } from '../../services/student/student.service';
 import { Student } from '../../model/student';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-detail',
@@ -20,6 +21,7 @@ export class DetailComponent {
 
   route = inject(ActivatedRoute);
   studentServ = inject(StudentService);
+  authServ = inject(AuthService);
 
   student?: Student;
 

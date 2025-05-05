@@ -21,11 +21,13 @@
             </span>
         </div>
     </div>
-    <form [formGroup]="myForm" (ngSubmit)="addMark()">
-        <label for="mark">add mark: </label>
-        <input type="number" formControlName="mark" id="mark">
-        <button type="submit">add</button>
-    </form>
-    <button (click)="openDialog()">delete</button>
+    @if(authServ.isAuth){
+        <form [formGroup]="myForm" (ngSubmit)="addMark()">
+            <label for="mark">add mark: </label>
+            <input type="number" formControlName="mark" id="mark">
+            <button type="submit">add</button>
+        </form>
+        <button (click)="openDialog()">delete</button>
+    }
 </div>
 }
